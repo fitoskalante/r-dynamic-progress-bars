@@ -10,7 +10,7 @@ export default function Range(props) {
         ></div>
       ) : (
         <div
-          className="range-over"
+          className="range-out"
           style={{ width: `${props.progress}%`, maxWidth: "100%" }}
         ></div>
       )}

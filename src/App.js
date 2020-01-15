@@ -7,7 +7,7 @@ function App() {
   const [limit, setLimit] = useState(0);
   const [buttons, setButtons] = useState([]);
   const [ammounts, setAmmounts] = useState([]);
-  const [selectedBar, setSelectedBar] = useState(0);
+  const [selectedBar, setSelectedBar] = useState("0");
 
   const getEndpoint = async () => {
     const res = await fetch("http://pb-api.herokuapp.com/bars");
@@ -53,8 +53,9 @@ function App() {
   return (
     <>
       <div className="App">
-        {!buttons ? (
-          <h1>Loading ...</h1>
+        <h1 className="title">Dynamic Bars</h1>
+        {limit === 0 ? (
+          <div className="loader"></div>
         ) : (
           <>
             <h3>Max: {limit}</h3>
@@ -62,28 +63,33 @@ function App() {
             {bars.map((bar, index) => (
               <ProgressBar
                 key={index}
+                idx={index}
+                selectedBar={selectedBar}
                 ammount={ammounts[index]}
                 progress={Math.round(bar)}
               />
             ))}
 
-            <select
-              value={selectedBar}
-              onChange={e => setSelectedBar(e.target.value)}
-            >
-              {bars.map((bar, index) => (
-                <option key={index} value={index}>
-                  Progress Bar {index + 1}
-                </option>
-              ))}
-            </select>
-
-            <div className="">
+            <div>
               {buttons.map((b, index) => (
                 <button key={index} onClick={() => handleOperation(b)}>
                   {b}{" "}
                 </button>
               ))}
+            </div>
+
+            <label>Select Bar:</label>
+            <div className="select-style">
+              <select
+                value={selectedBar}
+                onChange={e => setSelectedBar(e.target.value)}
+              >
+                {bars.map((bar, index) => (
+                  <option key={index} value={index}>
+                    {index + 1}
+                  </option>
+                ))}
+              </select>
             </div>
           </>
         )}

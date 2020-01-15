@@ -1,77 +1,192 @@
-html, body, #root {
+html, body {
   height: 100%;
   width: 100%;
+  background-color: #EBEBEB;
+  margin: 0;
 }
 
-.App {
+#root {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.App {
+  display: flex;
+  border-radius: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  height: 100%;
+  max-height: 600px;
+  height: 90%;
+  min-width: 350px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   background-color: white;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin: 0px;
+}
+
+.title {
+  color: #AB2A64;
+  width: 300px;
+  margin-bottom: 0px;
+  padding-bottom: 20px;
+  border-bottom: 0.1px solid #ccc;
 }
 
 .progress-bar {
-  width: 350px;
-  height: 35px;
-  border-radius: 10px;
-  border: 0.5px solid #EBEBEB;
+  width: 300px;
+  height: 25px;
+  border-radius: 30px;
+  border: 5px solid #EBEBEB;
   margin-bottom: 40px;
   background-color: #EBEBEB;
   position: relative;
   text-align: center;
 }
 
+.progress-bar-selected {
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar-selected>.range {
+  background: #58ACFB;
+}
+
+.progress-bar-selected>.range-out {
+  background: #8B83DB;
+}
+
 .range {
-  background: #4F8FFF;
+  background: #00E0F2;
   height: 100%;
   border-radius: inherit;
-  transition: width .3s ease-in;
+  transition: width .4s ease-out;
   position: absolute;
-  bottom: 0px;
+  bottom: 0%;
   z-index: 0;
 }
 
-.range-over {
-  background: red;
+.range-out {
+  background: #00E0F2;
   height: 100%;
   border-radius: inherit;
   transition: width .3s ease-in;
   position: absolute;
-  bottom: 0px;
+  bottom: 0%;
   z-index: 0;
 }
 
 .bar-label {
-  position: relative;
-  top: 10px;
+  position: absolute;
+  margin: 0;
+  line-height: 25px;
+  width: 100%;
   z-index: 1;
-  text-align: center;
-  vertical-align: middle;
   height: 100%;
-  margin: auto;
 }
 
 button {
   color: white;
-  font: bold 24px sans-serif;
+  font: bold 20px sans-serif;
+  width: 65px;
+  height: 65px;
   margin: 5px;
+  text-align: center;
   text-transform: uppercase;
-  background: #20bf6b;
-  padding: 20px;
-  border: 4px solid #20bf6b !important;
-  border-radius: 6px;
+  background: #AB2A64;
+  border: 4px solid #AB2A64 !important;
+  border-radius: 50px;
   display: inline-block;
-  transition: all 0.3s ease 0s;
+  transition: all 0.1s ease-in 0s;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
+  transform: scale(1.02, 1.02);
   border-radius: 50px;
-  transition: all 0.3s ease 0s;
+  transition: all 0.1s ease-in 0s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+  transform: scale(0.95, 0.95);
+  border-color: #A857A6 !important;
+  background: #A857A6;
+  border-radius: 50px;
+  transition: all 0.1s ease-in 0s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
 }
 
 button:focus {
   outline: none;
+}
+
+.select-style {
+  border: 1px solid #ccc;
+  height: 30px;
+  font-size: large;
+  width: 150px;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #EBEBEB;
+  background: #fafafa url("img/arrow-down.svg") no-repeat 95% 50%;
+}
+
+.select-style select {
+  padding: 5px 8px;
+  width: 170px;
+  height: 100%;
+  font-size: large;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+}
+
+.select-style select:focus {
+  outline: none;
+}
+
+label {
+  margin-top: 16px;
+  margin-bottom: 5px;
+  color: gray;
+}
+
+.loader {
+  border: 16px solid #EBEBEB;
+  border-radius: 50%;
+  border-top: 16px solid #58ACFB;
+  margin-top: 70px;
+  width: 70px;
+  height: 70px;
+  -webkit-animation: spin 0.5s linear infinite;
+  animation: spin 0.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
