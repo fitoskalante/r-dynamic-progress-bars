@@ -3,31 +3,53 @@ import "./App.css";
 import ProgressBar from "./components/ProgressBar";
 
 function App() {
-  const [selectedBar, setSelectedBar] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const [buttons, setButtons] = useState([]);
   const [bars, setBars] = useState([]);
   const [limit, setLimit] = useState(0);
+  const [buttons, setButtons] = useState([]);
+  const [ammounts, setAmmounts] = useState([]);
+  const [selectedBar, setSelectedBar] = useState(0);
 
   const getEndpoint = async () => {
     const res = await fetch("http://pb-api.herokuapp.com/bars");
     const data = await res.json();
-    setButtons(data.buttons);
-    setBars(data.bars);
     setLimit(data.limit);
+    setAmmounts(data.bars);
+    setButtons(data.buttons);
+    setBars(data.bars.map(b => (b * 100) / data.limit));
   };
 
-  const getPercentage = value => {
+  const handleOperation = value => {
+    let updatedBars = [...bars];
+    let updatedAmmounts = [...ammounts];
     if (limit > 0) {
       const percentage = (value * 100) / limit;
-      console.log("percentage", percentage);
+      if (value > 0) {
+        updatedAmmounts[selectedBar] = updatedAmmounts[selectedBar] + value;
+        updatedBars[selectedBar] = updatedBars[selectedBar] + percentage;
+        setBars(updatedBars);
+        setAmmounts(updatedAmmounts);
+      } else {
+        updatedBars[selectedBar] =
+          updatedBars[selectedBar] - Math.abs(percentage);
+        updatedAmmounts[selectedBar] =
+          updatedAmmounts[selectedBar] - Math.abs(value);
+
+        if (updatedBars[selectedBar] < 0) {
+          updatedBars[selectedBar] = 0;
+          updatedAmmounts[selectedBar] = 0;
+          setBars(updatedBars);
+          setAmmounts(updatedAmmounts);
+        }
+        setBars(updatedBars);
+        setAmmounts(updatedAmmounts);
+      }
     }
   };
 
   useEffect(() => {
     getEndpoint();
   }, []);
-  console.log("ok", buttons, bars, selectedBar);
+
   return (
     <>
       <div className="App">
@@ -38,7 +60,11 @@ function App() {
             <h3>Max: {limit}</h3>
 
             {bars.map((bar, index) => (
-              <ProgressBar key={index} progress={bar} />
+              <ProgressBar
+                key={index}
+                ammount={ammounts[index]}
+                progress={Math.round(bar)}
+              />
             ))}
 
             <select
@@ -54,7 +80,7 @@ function App() {
 
             <div className="">
               {buttons.map((b, index) => (
-                <button key={index} onClick={() => getPercentage(b)}>
+                <button key={index} onClick={() => handleOperation(b)}>
                   {b}{" "}
                 </button>
               ))}

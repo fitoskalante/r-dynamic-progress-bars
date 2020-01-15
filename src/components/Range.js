@@ -1,6 +1,19 @@
 import React from "react";
 
 export default function Range(props) {
-  console.log("props", props.progress);
-  return <div className="range" style={{ width: `${props.progress}%` }}></div>;
+  return (
+    <>
+      {props.progress <= 100 ? (
+        <div
+          className="range"
+          style={{ width: `${props.progress}%`, maxWidth: "100%" }}
+        ></div>
+      ) : (
+        <div
+          className="range-over"
+          style={{ width: `${props.progress}%`, maxWidth: "100%" }}
+        ></div>
+      )}
+    </>
+  );
 }
