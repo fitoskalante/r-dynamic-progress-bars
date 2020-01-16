@@ -1,5 +1,7 @@
+@import 'src/variables/colors.scss';
+
 .range {
-    background: #00E0F2;
+    background: $deactivateFiller;
     height: 100%;
     border-radius: inherit;
     transition: width .4s ease-out;
@@ -9,7 +11,7 @@
 }
 
 .range-out {
-    background: #00E0F2;
+    background: $deactivateFiller;
     height: 100%;
     border-radius: inherit;
     transition: width .3s ease-in;

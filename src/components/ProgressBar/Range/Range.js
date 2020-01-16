@@ -1,5 +1,5 @@
 import React from "react";
-import "./Range.css";
+import "./Range.scss";
 
 export default function Range(props) {
   return (

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./App.scss";
 import ProgressBar from "./components/ProgressBar/ProgressBar";
 import Loader from "./components/Loader/Loader";
 import Button from "./components/Button/Button";
 import SelectBar from "./components/SelectBar/SelectBar";
+import {Animated} from "react-animated-css";
 
 function App() {
   const [bars, setBars] = useState([]);
@@ -55,15 +56,18 @@ function App() {
 
   return (
     <>
-      <div className="App">
+        <Animated className='App' animationIn="pulse" animationInDuration={500} isVisible={true}>
+
         <h1 className="title">Dynamic Bars</h1>
         {limit === 0 ? (
           <Loader />
+          
         ) : (
           <>
             <h3>Max: {limit}</h3>
 
             {bars.map((bar, index) => (
+              
               <ProgressBar
                 key={index}
                 idx={index}
@@ -71,8 +75,9 @@ function App() {
                 ammount={ammounts[index]}
                 progress={Math.round(bar)}
               />
+              
             ))}
-
+    <Animated animationIn="pulse" animationInDuration={500} isVisible={true}>
             <div>
               {buttons.map((value, index) => (
                 <Button
@@ -82,6 +87,7 @@ function App() {
                 />
               ))}
             </div>
+            </Animated>
 
             <SelectBar
               selectedBar={selectedBar}
@@ -90,7 +96,8 @@ function App() {
             />
           </>
         )}
-      </div>
+
+        </Animated>
     </>
   );
 }

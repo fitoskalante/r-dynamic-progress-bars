@@ -1,7 +1,10 @@
+@import 'src/variables/colors.scss';
+
+
 .loader {
-    border: 16px solid #EBEBEB;
+    border: 16px solid $background;
     border-radius: 50%;
-    border-top: 16px solid #58ACFB;
+    border-top: 16px solid $filler;
     margin-top: 70px;
     width: 70px;
     height: 70px;
