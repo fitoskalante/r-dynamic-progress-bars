@@ -4,7 +4,7 @@ import ProgressBar from "./components/ProgressBar/ProgressBar";
 import Loader from "./components/Loader/Loader";
 import Button from "./components/Button/Button";
 import SelectBar from "./components/SelectBar/SelectBar";
-import {Animated} from "react-animated-css";
+import { Animated } from "react-animated-css";
 
 function App() {
   const [bars, setBars] = useState([]);
@@ -56,18 +56,20 @@ function App() {
 
   return (
     <>
-        <Animated className='App' animationIn="pulse" animationInDuration={500} isVisible={true}>
-
+      <Animated
+        className="App"
+        animationIn="pulse"
+        animationInDuration={500}
+        isVisible={true}
+      >
         <h1 className="title">Dynamic Bars</h1>
         {limit === 0 ? (
           <Loader />
-          
         ) : (
           <>
             <h3>Max: {limit}</h3>
 
             {bars.map((bar, index) => (
-              
               <ProgressBar
                 key={index}
                 idx={index}
@@ -75,18 +77,21 @@ function App() {
                 ammount={ammounts[index]}
                 progress={Math.round(bar)}
               />
-              
             ))}
-    <Animated animationIn="pulse" animationInDuration={500} isVisible={true}>
-            <div>
-              {buttons.map((value, index) => (
-                <Button
-                  key={index}
-                  onClick={() => handleOperation(value)}
-                  value={value}
-                />
-              ))}
-            </div>
+            <Animated
+              animationIn="pulse"
+              animationInDuration={500}
+              isVisible={true}
+            >
+              <div>
+                {buttons.map((value, index) => (
+                  <Button
+                    key={index}
+                    onClick={() => handleOperation(value)}
+                    value={value}
+                  />
+                ))}
+              </div>
             </Animated>
 
             <SelectBar
@@ -96,8 +101,7 @@ function App() {
             />
           </>
         )}
-
-        </Animated>
+      </Animated>
     </>
   );
 }

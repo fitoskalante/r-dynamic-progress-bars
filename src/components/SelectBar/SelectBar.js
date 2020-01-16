@@ -1,5 +1,5 @@
 import React from "react";
-import "./SelectBar.css";
+import "./SelectBar.scss";
 
 export default function SelectBar({ selectedBar, setSelectedBar, bars }) {
   return (

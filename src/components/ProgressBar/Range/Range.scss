@@ -1,21 +1,21 @@
-@import 'src/variables/colors.scss';
+@import "src/variables/colors.scss";
 
 .range {
-    background: $deactivateFiller;
-    height: 100%;
-    border-radius: inherit;
-    transition: width .4s ease-out;
-    position: absolute;
-    bottom: 0%;
-    z-index: 0;
+  background: $deactivateFiller;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.4s ease-out;
+  position: absolute;
+  bottom: 0%;
+  z-index: 0;
 }
 
 .range-out {
-    background: $deactivateFiller;
-    height: 100%;
-    border-radius: inherit;
-    transition: width .3s ease-in;
-    position: absolute;
-    bottom: 0%;
-    z-index: 0;
+  background: $deactivateFiller;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.3s ease-in;
+  position: absolute;
+  bottom: 0%;
+  z-index: 0;
 }

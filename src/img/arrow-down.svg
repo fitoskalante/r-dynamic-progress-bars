@@ -3,15 +3,15 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#58ACFB;}
-	.st1{fill:#58ACFB;stroke:#58ACFB;stroke-width:14;stroke-miterlimit:10;}
+	.st0{fill:#FF6050;}
+	.st1{fill:#FF6050;stroke:#FF6050;stroke-width:14;stroke-miterlimit:10;}
 </style>
 <g>
 	<g>
 		<g>
 			<path class="st0" d="M256,78c-98.2,0-178,79.8-178,178s79.8,178,178,178s178-79.8,178-178S354.2,78,256,78z M256,408.3
 				c-84,0-152.3-68.3-152.3-152.3S172,103.7,256,103.7S408.3,172,408.3,256S340,408.3,256,408.3z"/>
-			<path class="st1" d="M332.3,221.1L256,297.4l-76.3-76.3c-2.9-2.9-7.6-2.9-10.5,0c-2.9,2.9-2.9,7.6,0,10.5l81.6,81.6
+			<path class="st1" d="M332.3,221.1L256,297.4l-76.3-76.3c-2.9-2.9-7.6-2.9-10.5,0s-2.9,7.6,0,10.5l81.6,81.6
 				c1.5,1.5,3.3,2.2,5.2,2.2c1.9,0,3.8-0.7,5.2-2.2l81.6-81.6c2.9-2.9,2.9-7.6,0-10.5C339.9,218.2,335.3,218.2,332.3,221.1z"/>
 		</g>
 	</g>

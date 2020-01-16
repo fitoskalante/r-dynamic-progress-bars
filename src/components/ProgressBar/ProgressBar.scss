@@ -1,34 +1,33 @@
-@import 'src/variables/colors.scss';
+@import "src/variables/colors.scss";
 
 .progress-bar {
-    width: 300px;
-    height: 25px;
-    border-radius: 10px;
-    border: 5px solid $background;
-    margin-bottom: 40px;
-    background-color: $background;
-    position: relative;
-    text-align: center;
+  width: 300px;
+  height: 25px;
+  border-radius: 10px;
+  border: 5px solid $background;
+  margin-bottom: 40px;
+  background-color: $background;
+  position: relative;
+  text-align: center;
 }
 
 .progress-bar-selected {
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
-.progress-bar-selected>.range {
-    background: $filler;
+.progress-bar-selected > .range {
+  background: $filler;
 }
 
-.progress-bar-selected>.range-out {
-    background: $overLimit;
+.progress-bar-selected > .range-out {
+  background: $overLimit;
 }
 
 .bar-label {
-    color: white;
-    position: absolute;
-    margin: 0;
-    line-height: 25px;
-    width: 100%;
-    z-index: 1;
-    height: 100%;
+  position: absolute;
+  margin: 0;
+  line-height: 25px;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
 }
