@@ -1,0 +1,19 @@
+.range {
+    background: #00E0F2;
+    height: 100%;
+    border-radius: inherit;
+    transition: width .4s ease-out;
+    position: absolute;
+    bottom: 0%;
+    z-index: 0;
+}
+
+.range-out {
+    background: #00E0F2;
+    height: 100%;
+    border-radius: inherit;
+    transition: width .3s ease-in;
+    position: absolute;
+    bottom: 0%;
+    z-index: 0;
+}

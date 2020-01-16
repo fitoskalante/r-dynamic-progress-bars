@@ -1,0 +1,31 @@
+.progress-bar {
+    width: 300px;
+    height: 25px;
+    border-radius: 10px;
+    border: 5px solid #EBEBEB;
+    margin-bottom: 40px;
+    background-color: #EBEBEB;
+    position: relative;
+    text-align: center;
+}
+
+.progress-bar-selected {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar-selected>.range {
+    background: #58ACFB;
+}
+
+.progress-bar-selected>.range-out {
+    background: #8B83DB;
+}
+
+.bar-label {
+    position: absolute;
+    margin: 0;
+    line-height: 25px;
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+}

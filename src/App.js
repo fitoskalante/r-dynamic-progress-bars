@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import ProgressBar from "./components/ProgressBar";
+import ProgressBar from "./components/ProgressBar/ProgressBar";
+import Loader from "./components/Loader/Loader";
+import Button from "./components/Button/Button";
+import SelectBar from "./components/SelectBar/SelectBar";
 
 function App() {
   const [bars, setBars] = useState([]);
@@ -55,7 +58,7 @@ function App() {
       <div className="App">
         <h1 className="title">Dynamic Bars</h1>
         {limit === 0 ? (
-          <div className="loader"></div>
+          <Loader />
         ) : (
           <>
             <h3>Max: {limit}</h3>
@@ -71,26 +74,20 @@ function App() {
             ))}
 
             <div>
-              {buttons.map((b, index) => (
-                <button key={index} onClick={() => handleOperation(b)}>
-                  {b}{" "}
-                </button>
+              {buttons.map((value, index) => (
+                <Button
+                  key={index}
+                  onClick={() => handleOperation(value)}
+                  value={value}
+                />
               ))}
             </div>
 
-            <label>Select Bar:</label>
-            <div className="select-style">
-              <select
-                value={selectedBar}
-                onChange={e => setSelectedBar(e.target.value)}
-              >
-                {bars.map((bar, index) => (
-                  <option key={index} value={index}>
-                    {index + 1}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <SelectBar
+              selectedBar={selectedBar}
+              setSelectedBar={setSelectedBar}
+              bars={bars}
+            />
           </>
         )}
       </div>

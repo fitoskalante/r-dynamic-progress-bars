@@ -1,5 +1,6 @@
 import React from "react";
-import Range from "./Range";
+import Range from "./Range/Range";
+import "./ProgressBar.css";
 
 export default function ProgressBar(props) {
   return (
