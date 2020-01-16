@@ -1,4 +1,4 @@
-# Project Brief: `Front End Assignment - Progress Bars`
+# Project Brief: `Front End Dynamic Progress Bars`
 
 
 ### Key Features and Technical Implementation Plan
