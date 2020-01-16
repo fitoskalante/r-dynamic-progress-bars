@@ -24,3 +24,7 @@ _Data from API_
 
 - Limit
   - The equivalent to 100% of each bar. For example, the bar should be 100% filled when the progress hits 230.
+
+### Deployed on Netlify
+
+- _Link_: https://github.com/fitoskalante/r-dynamic-progress-bars
