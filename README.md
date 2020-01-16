@@ -28,3 +28,7 @@ _Data from API_
 ### Deployed on Netlify
 
 - _Link_: https://github.com/fitoskalante/r-dynamic-progress-bars
+
+### My Resume Link
+
+- _Link_: https://drive.google.com/file/d/1ccxspkyElxrbwLFEj2_5oH9IaspKmlYO/view?usp=sharing
