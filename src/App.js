@@ -10,7 +10,7 @@ function App() {
   const [selectedBar, setSelectedBar] = useState("0");
 
   const getEndpoint = async () => {
-    const res = await fetch("http://pb-api.herokuapp.com/bars");
+    const res = await fetch("https://pb-api.herokuapp.com/bars");
     const data = await res.json();
     setLimit(data.limit);
     setAmmounts(data.bars);
